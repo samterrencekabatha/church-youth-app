@@ -1,0 +1,844 @@
+# Youth Bible Trivia Website (Bootstrap Themed)
+
+Below is the updated structure you should use to make your Bible Trivia Interview app match the Bootstrap church/youth announcement website style from your screenshot.
+
+---
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youth Bible Trivia Interview</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#155e5b;
+    color:white;
+    padding:10px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.topbar .left,
+.topbar .right{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#1d6b67;
+    padding:30px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:white;
+    font-size:42px;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#c6fffa;
+}
+
+/* PAGE TITLE */
+.page-title{
+    background:#edf1f1;
+    padding:30px 8%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.page-title h2{
+    font-size:40px;
+    font-weight:700;
+}
+
+.breadcrumb{
+    color:#3d6463;
+    font-size:15px;
+}
+
+/* CONTENT AREA */
+.content-section{
+    padding:70px 8%;
+    background:white;
+    min-height:700px;
+}
+
+.hero-text{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.hero-text h1{
+    font-size:52px;
+    color:#062f2d;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    color:#4f6362;
+    font-size:18px;
+}
+
+.quiz-container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 40px rgba(0,0,0,.08);
+    border:1px solid #ddd;
+}
+
+input,
+select,
+button{
+    width:100%;
+    padding:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+button{
+    background:#1d6b67;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover{
+    background:#144846;
+}
+
+.hidden{
+    display:none;
+}
+
+.question{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:25px;
+    line-height:1.5;
+}
+
+.options{
+    display:grid;
+    gap:15px;
+}
+
+.option-btn{
+    background:#f3f7f7;
+    border:2px solid transparent;
+    color:#1d3332;
+}
+
+.option-btn:hover{
+    border:2px solid #1d6b67;
+}
+
+.timer-wrapper{
+    margin-bottom:25px;
+}
+
+.timer-bar-bg{
+    width:100%;
+    height:24px;
+    background:#dce9e8;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.timer-bar{
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,#22c55e,#facc15,#ef4444);
+    transition:width 1s linear;
+}
+
+.timer-text{
+    text-align:right;
+    margin-top:10px;
+    font-weight:600;
+    color:#444;
+}
+
+.score-display{
+    text-align:center;
+    font-size:55px;
+    color:#1d6b67;
+    margin:30px 0;
+    font-weight:700;
+}
+
+.leaderboard{
+    overflow-x:auto;
+}
+
+.leaderboard table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:25px;
+}
+
+.leaderboard th,
+.leaderboard td{
+    padding:15px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+.leaderboard th{
+    background:#1d6b67;
+    color:white;
+}
+
+/* FOOTER */
+.footer{
+    background:#1d6b67;
+    color:white;
+    padding:70px 8% 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer h3{
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.footer ul{
+    list-style:none;
+}
+
+.footer ul li{
+    margin-bottom:12px;
+}
+
+.footer ul li a{
+    color:#d8f7f5;
+    text-decoration:none;
+}
+
+.copyright{
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,.2);
+    padding-top:20px;
+    text-align:center;
+}
+
+@media(max-width:768px){
+
+.logo{
+    font-size:32px;
+}
+
+.hero-text h1{
+    font-size:36px;
+}
+
+.page-title h2{
+    font-size:28px;
+}
+
+.question{
+    font-size:22px;
+}
+
+.quiz-container{
+    padding:25px;
+}
+
+.navbar{
+    gap:25px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="left">
+        <span><i class="fa-solid fa-globe"></i> ST.GEORGEACKYOUTHAPP.GITHUB.IO</span>
+        <span><i class="fa-solid fa-phone"></i> +254 7960 71670</span>
+    </div>
+
+    <div class="right">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="navbar">
+
+    <div class="logo">
+        YOUTH<br>
+        ANNOUNCEMENTS<br>
+        WEBSITE
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Bible Study</a>
+        <a href="#">Youth</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </div>
+
+</div>
+
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2>YOUTH WEB BASED APPLICATION</h2>
+
+    <div class="breadcrumb">
+        REGISTRATION WINDOW FOR YOUTH CHAMPIONS OPEN
+    </div>
+</div>
+
+<!-- MAIN WHITE SPACE CONTENT -->
+<section class="content-section">
+
+    <div class="hero-text">
+        <h1>AI VOICE BIBLE TRIVIA INTERVIEW</h1>
+        <p>A 20 QUESTION INTERVIEW SESSION POWERED BY AI VOICE ASSISTANT</p>
+    </div>
+
+
+    <div class="quiz-container">
+
+        <!-- REGISTER -->
+        <div id="registerScreen">
+
+            <h2 style="margin-bottom:20px;">Player Registration</h2>
+
+            <input type="text" id="name" placeholder="Enter Full Name">
+            <input type="number" id="age" placeholder="Enter Age">
+
+            <select id="sex">
+                <option value="">Select Sex</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <button onclick="startQuiz()">Start Interview</button>
+
+        </div>
+
+
+        <!-- QUIZ -->
+        <div id="quizScreen" class="hidden">
+
+            <div class="timer-wrapper">
+
+                <div class="timer-bar-bg">
+                    <div class="timer-bar" id="timerBar"></div>
+                </div>
+
+                <div class="timer-text">
+                    Time Remaining: <span id="time">45</span>s
+                </div>
+
+            </div>
+
+            <div class="question" id="question"></div>
+
+            <div class="options" id="options"></div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <div id="resultScreen" class="hidden">
+
+            <h2 style="text-align:center;">Interview Completed</h2>
+
+            <div class="score-display">
+                <span id="finalScore"></span>/20
+            </div>
+
+            <button onclick="restartQuiz()">Play Again</button>
+
+            <div class="leaderboard">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="leaderboardBody"></tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>DIOCESAN MISSIONARY ASSOCIATION</h3>
+            <p>A108 Mugambi Drive</p>
+            <p>Nanyuki, NYK 10400</p>
+            <p style="margin-top:15px;">Phone: +254 7960 71670</p>
+            <p>Email: ackstgeorgeyouth@gmail.com</p>
+        </div>
+
+        <div>
+            <h4>Useful Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Announcements</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Our Services</h4>
+            <ul>
+                <li><a href="#">Bible Study</a></li>
+                <li><a href="#">Youth Programs</a></li>
+                <li><a href="#">Mission Support</a></li>
+                <li><a href="#">Church Events</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © Copyright Youth Website. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<script>
+
+const questions = [
+
+{
+q:"Who built the ark?",
+options:["Moses","Noah","David","Paul"],
+answer:"Noah"
+},
+
+{
+q:"Who was swallowed by a big fish?",
+options:["Jonah","Peter","John","Abraham"],
+answer:"Jonah"
+},
+
+{
+q:"Who killed Goliath?",
+options:["David","Samuel","Paul","Joseph"],
+answer:"David"
+},
+
+{
+q:"Who led Israelites from Egypt?",
+options:["Moses","Aaron","Noah","Isaiah"],
+answer:"Moses"
+},
+
+{
+q:"How many disciples did Jesus have?",
+options:["10","12","14","7"],
+answer:"12"
+},
+
+{
+q:"Who betrayed Jesus?",
+options:["Judas","Peter","Luke","John"],
+answer:"Judas"
+},
+
+{
+q:"Where was Jesus born?",
+options:["Bethlehem","Nazareth","Rome","Egypt"],
+answer:"Bethlehem"
+},
+
+{
+q:"Who denied Jesus three times?",
+options:["Paul","Peter","John","Thomas"],
+answer:"Peter"
+},
+
+{
+q:"Who was thrown into the lions den?",
+options:["Daniel","Joseph","David","Joshua"],
+answer:"Daniel"
+},
+
+{
+q:"What is the last book in the Bible?",
+options:["Revelation","Romans","Acts","Genesis"],
+answer:"Revelation"
+},
+
+{
+q:"Who was the strongest man in the Bible?",
+options:["Samson","David","Solomon","Moses"],
+answer:"Samson"
+},
+
+{
+q:"Who climbed a sycamore tree to see Jesus?",
+options:["Zacchaeus","Paul","Peter","Andrew"],
+answer:"Zacchaeus"
+},
+
+{
+q:"Who interpreted Pharaoh dreams?",
+options:["Joseph","Daniel","Elijah","David"],
+answer:"Joseph"
+},
+
+{
+q:"What sea did Moses part?",
+options:["Red Sea","Dead Sea","Black Sea","Sea of Galilee"],
+answer:"Red Sea"
+},
+
+{
+q:"Who wrote many Psalms?",
+options:["David","Paul","Solomon","Luke"],
+answer:"David"
+},
+
+{
+q:"What did Jesus turn water into?",
+options:["Wine","Oil","Milk","Honey"],
+answer:"Wine"
+},
+
+{
+q:"Who was Adam wife?",
+options:["Eve","Sarah","Mary","Ruth"],
+answer:"Eve"
+},
+
+{
+q:"Who baptized Jesus?",
+options:["John the Baptist","Peter","Paul","Moses"],
+answer:"John the Baptist"
+},
+
+{
+q:"Shortest verse in Bible?",
+options:["Jesus wept","Fear not","Pray always","God is love"],
+answer:"Jesus wept"
+},
+
+{
+q:"How many days did Jesus fast?",
+options:["40","7","10","30"],
+answer:"40"
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let timer;
+let timeLeft = 45;
+let player = {};
+
+const tick = new Audio("https://actions.google.com/sounds/v1/alarms/ticking_clock.ogg");
+tick.loop = true;
+
+const success = new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
+
+function startQuiz(){
+
+const name = document.getElementById("name").value;
+const age = document.getElementById("age").value;
+const sex = document.getElementById("sex").value;
+
+if(!name || !age || !sex){
+    alert("Please fill all fields");
+    return;
+}
+
+player = {name,age,sex};
+
+
+document.getElementById("registerScreen").classList.add("hidden");
+document.getElementById("quizScreen").classList.remove("hidden");
+
+loadQuestion();
+
+}
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 45;
+
+const q = questions[currentQuestion];
+
+const question = document.getElementById("question");
+const options = document.getElementById("options");
+
+question.innerHTML = `Q${currentQuestion+1}. ${q.q}`;
+
+options.innerHTML = "";
+
+q.options.forEach(option=>{
+
+const btn = document.createElement("button");
+btn.classList.add("option-btn");
+btn.innerText = option;
+
+btn.onclick = ()=>checkAnswer(option);
+
+options.appendChild(btn);
+
+});
+
+speak(q.q);
+startTimer();
+
+}
+
+function speak(text){
+
+const speech = new SpeechSynthesisUtterance(text);
+
+speech.lang = "en-US";
+speech.rate = 1;
+
+speechSynthesis.speak(speech);
+
+}
+
+function startTimer(){
+
+const time = document.getElementById("time");
+const timerBar = document.getElementById("timerBar");
+
+tick.play();
+
+
+timer = setInterval(()=>{
+
+    timeLeft--;
+
+    time.innerText = timeLeft;
+
+    timerBar.style.width = (timeLeft/45)*100 + "%";
+
+    if(timeLeft <= 0){
+
+        clearInterval(timer);
+        tick.pause();
+
+        nextQuestion();
+
+    }
+
+},1000);
+
+}
+
+function checkAnswer(selected){
+
+clearInterval(timer);
+
+tick.pause();
+
+if(selected === questions[currentQuestion].answer){
+
+    score++;
+    success.play();
+
+}
+
+nextQuestion();
+
+}
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion < questions.length){
+
+    loadQuestion();
+
+}else{
+
+    finishQuiz();
+
+}
+
+}
+
+function finishQuiz(){
+
+
+document.getElementById("quizScreen").classList.add("hidden");
+document.getElementById("resultScreen").classList.remove("hidden");
+
+
+document.getElementById("finalScore").innerText = score;
+
+saveLeaderboard();
+renderLeaderboard();
+
+}
+
+function saveLeaderboard(){
+
+let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+leaderboard.push({
+    ...player,
+    score
+});
+
+leaderboard.sort((a,b)=>b.score-a.score);
+
+localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+}
+
+function renderLeaderboard(){
+
+let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+const body = document.getElementById("leaderboardBody");
+
+body.innerHTML = "";
+
+leaderboard.forEach(item=>{
+
+body.innerHTML += `
+<tr>
+<td>${item.name}</td>
+<td>${item.age}</td>
+<td>${item.sex}</td>
+<td>${item.score}</td>
+</tr>
+`;
+
+});
+
+}
+
+function restartQuiz(){
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+</html>
+```
+
+---
+
+# IMPORTANT FOR HIGH TRAFFIC SERVER DEPLOYMENT
+
+Your current version uses `localStorage`.
+
+That only saves scores on ONE browser/device.
+
+For real deployment with many users:
+
+* Use Firebase Firestore
+* OR MySQL + PHP backend
+* OR Node.js + MongoDB
+
+Recommended easiest option:
+
+✅ Firebase Firestore
+
+Why?
+
+* Free starter plan
+* Real-time database
+* Works on phones/tablets/laptops
+* Handles multiple users safely
+* No server coding required initially
+* Prevents leaderboard conflicts
+
+You can later replace this section:
+
+```javascript
+localStorage.setItem(...)
+```
+
+with Firebase save methods.
