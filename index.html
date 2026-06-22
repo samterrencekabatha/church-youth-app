@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Starter Page - Grandoria Bootstrap Template</title>
+  <title>ST.GEORGE YOUTH COMMUNITY</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -23,6 +23,387 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+    <style>/* Main Chat */
+
+.chat-container{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.chat-header{
+background:white;
+padding:20px;
+box-shadow:var(--shadow);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.chat-header h2{
+color:var(--primary);
+}
+
+.messages{
+flex:1;
+overflow-y:auto;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.message{
+max-width:70%;
+padding:12px;
+border-radius:18px;
+position:relative;
+box-shadow:var(--shadow);
+}
+
+.received{
+background:white;
+align-self:flex-start;
+}
+
+.sent{
+background:var(--primary);
+color:white;
+align-self:flex-end;
+}
+
+.message-name{
+font-size:.8rem;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.time{
+font-size:.7rem;
+opacity:.7;
+margin-top:5px;
+}
+
+.chat-input{
+background:white;
+padding:15px;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.chat-input input{
+flex:1;
+padding:15px;
+border:none;
+background:#f1f1f1;
+border-radius:30px;
+}
+
+.chat-input button{
+border:none;
+background:var(--primary);
+color:white;
+padding:14px 20px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.chat-input button:hover{
+background:var(--primary-dark);
+}
+
+.emoji-btn{
+font-size:22px;
+cursor:pointer;
+}
+ .floating-leaf{
+    position:fixed;
+    font-size:2rem;
+    animation:float 8s linear infinite;
+    opacity:0.15;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(110vh) rotate(0deg);
+    }
+    100%{
+        transform:translateY(-120px) rotate(360deg);
+    }
+}textarea{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    margin-top:10px;
+}
+
+button.submit{
+    background:#0d3b2e;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    margin-top:14px;
+    cursor:pointer;
+}.flex{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}button.submit{
+    background:#0d3b2e;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    margin-top:14px;
+    cursor:pointer;
+}
+.chat-container{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.chat-header{
+background:white;
+padding:20px;
+box-shadow:var(--shadow);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.chat-header h2{
+color:var(--primary);
+}
+
+.messages{
+flex:1;
+overflow-y:auto;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.message{
+max-width:70%;
+padding:12px;
+border-radius:18px;
+position:relative;
+box-shadow:var(--shadow);
+}
+
+.received{
+background:white;
+align-self:flex-start;
+}
+
+.sent{
+background:var(--primary);
+color:white;
+align-self:flex-end;
+}
+
+.message-name{
+font-size:.8rem;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.time{
+font-size:.7rem;
+opacity:.7;
+margin-top:5px;
+}
+
+.chat-input{
+background:white;
+padding:15px;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.chat-input input{
+flex:1;
+padding:15px;
+border:none;
+background:#f1f1f1;
+border-radius:30px;
+}
+
+.chat-input button{
+border:none;
+background:var(--primary);
+color:white;
+padding:14px 20px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.chat-input button:hover{
+background:var(--primary-dark);
+}
+
+.emoji-btn{
+font-size:22px;
+cursor:pointer;
+}
+
+.register-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.register-card{
+background:white;
+padding:30px;
+width:90%;
+max-width:400px;
+border-radius:20px;
+}
+
+.register-card h2{
+margin-bottom:20px;
+color:var(--primary);
+}
+
+.register-card input{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:12px;
+}
+
+.register-card button{
+width:100%;
+padding:15px;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
+}
+
+@media(max-width:768px){
+
+.sidebar{
+width:90px;
+}
+
+.member span{
+display:none;
+}
+
+.search-box{
+display:none;
+}
+
+.logo{
+font-size:.9rem;
+text-align:center;
+}
+
+.message{
+max-width:90%;
+}
+}
+    .floating-leaf{
+    position:fixed;
+    font-size:2rem;
+    animation:float 8s linear infinite;
+    opacity:0.15;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(110vh) rotate(0deg);
+    }
+    100%{
+        transform:translateY(-120px) rotate(360deg);
+    }
+}
+.card{
+    background:white;
+    border-radius:24px;
+    padding:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+    input, select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:12px;
+    border:1px solid #ddd;
+}
+
+textarea{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    margin-top:10px;
+}
+
+button.submit{
+    background:#0d3b2e;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    margin-top:14px;
+    cursor:pointer;
+}
+    .card-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.flex{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+    table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th, table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+.gold{
+    background:gold;
+}
+
+.silver{
+    background:silver;
+}
+
+.bronze{
+    background:#cd7f32;
+    color:white;
+}</style>
 
   <!-- =======================================================
   * Template Name: Grandoria
@@ -33,7 +414,7 @@
   ======================================================== -->
 </head>
 
-<body class="starter-page-page" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="0">
+<body class="starter-page-page scrolled" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="0">
 
   <header id="header" class="header sticky-top">
 
@@ -149,7 +530,384 @@
 </div>
 
 <div class="messages" id="messages">
-   </div>
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    😊 😊 😊
+                </div>
+
+                <div class="time">
+                    03:24 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    😊 😊 😊
+                </div>
+
+                <div class="time">
+                    03:24 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    yooooo
+                </div>
+
+                <div class="time">
+                    03:25 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    Hey
+                </div>
+
+                <div class="time">
+                    03:27 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    Finally we did it!!!!!!
+                </div>
+
+                <div class="time">
+                    03:27 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    😊 😊 😊eissshhh my guy
+                </div>
+
+                <div class="time">
+                    03:28 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    😊 😊 😊 😊i see you
+                </div>
+
+                <div class="time">
+                    03:28 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    😊 😊cannot wait to show this to my friends
+                </div>
+
+                <div class="time">
+                    03:33 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    alafu...formation ni gani buana could we have more settings here pls
+                </div>
+
+                <div class="time">
+                    03:38 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    I was thinking of the same. Like button ya voice notes and what note could really help
+                </div>
+
+                <div class="time">
+                    03:40 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    Hello Sam_Kabz_ we need you to act on this otherwise other guys might come with heavy  criticism
+                </div>
+
+                <div class="time">
+                    03:44 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    😊
+                </div>
+
+                <div class="time">
+                    03:48 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    😊https://samterrencekabatha.github.io/STK-shield-Kenya/church.html
+                </div>
+
+                <div class="time">
+                    03:52 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    😊https://samterrencekabatha.github.io/STK-shield-Kenya/church.html
+                </div>
+
+                <div class="time">
+                    03:52 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    Share to our friends and let them connect with us on this open and discreet platform
+                </div>
+
+                <div class="time">
+                    03:53 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    😊 😊thank you
+                </div>
+
+                <div class="time">
+                    03:53 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    😊
+                </div>
+
+                <div class="time">
+                    03:54 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    Okay so mumelala
+                </div>
+
+                <div class="time">
+                    04:43 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    austinmuriuki001@gmail.com
+                </div>
+
+                <div>
+                    Olaaa
+                </div>
+
+                <div class="time">
+                    04:48 AM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    😊 😊 😊 😊 😊
+                </div>
+
+                <div class="time">
+                    01:49 PM
+                </div>
+            </div>
+        
+            <div class="message received">
+                <div class="message-name">
+                    bro code
+                </div>
+
+                <div>
+                    hey there
+                </div>
+
+                <div class="time">
+                    01:49 PM
+                </div>
+            </div>
+        
+            <div class="message sent">
+                <div class="message-name">
+                    sam_kabz_
+                </div>
+
+                <div>
+                    😊 😊
+                </div>
+
+                <div class="time">
+                    12:23 AM
+                </div>
+            </div>
+        
+            <div class="message sent">
+                <div class="message-name">
+                    sam_kabz_
+                </div>
+
+                <div>
+                    😊 😊
+                </div>
+
+                <div class="time">
+                    12:23 AM
+                </div>
+            </div>
+        
+            <div class="message sent">
+                <div class="message-name">
+                    sam_kabz_
+                </div>
+
+                <div>
+                    😊 😊
+                </div>
+
+                <div class="time">
+                    12:23 AM
+                </div>
+            </div>
+        
+            <div class="message sent">
+                <div class="message-name">
+                    sam_kabz_
+                </div>
+
+                <div>
+                    😊 😊
+                </div>
+
+                <div class="time">
+                    12:23 AM
+                </div>
+            </div>
+        
+            <div class="message sent">
+                <div class="message-name">
+                    sam_kabz_
+                </div>
+
+                <div>
+                    😊 😊
+                </div>
+
+                <div class="time">
+                    12:23 AM
+                </div>
+            </div>
+        
+            <div class="message sent">
+                <div class="message-name">
+                    sam_kabz_
+                </div>
+
+                <div>
+                    ooooh it works, yeyiii
+                </div>
+
+                <div class="time">
+                    12:23 AM
+                </div>
+            </div>
+        </div>
 
 <div class="chat-input">
 
@@ -263,7 +1021,7 @@ Send
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   
