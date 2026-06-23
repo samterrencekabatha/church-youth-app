@@ -23,7 +23,22 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-    <style>/* ==========================
+    <style>.floating-leaf{
+    position:fixed;
+    font-size:2rem;
+    animation:float 8s linear infinite;
+    opacity:0.15;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(110vh) rotate(0deg);
+    }
+    100%{
+        transform:translateY(-120px) rotate(360deg);
+    }
+}/* ==========================
    ST GEORGE CHAT
 ========================== */
 
@@ -241,7 +256,7 @@
   ======================================================== -->
 </head>
 
-<body class="starter-page-page scrolled" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="0">
+<body class="starter-page-page" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="0">
 
   <header id="header" class="header sticky-top">
 
@@ -918,7 +933,7 @@ Send
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   
