@@ -358,7 +358,7 @@
 <div class="floating-leaf" style="left:50%; animation-delay:4s;">🍃</div>
 <div class="floating-leaf" style="left:75%; animation-delay:1s;">🌱</div>
 <div class="floating-leaf" style="left:90%; animation-delay:5s;">🍃</div>
-    <div id="registerModal" class="register-modal hidden">
+    <div id="registerModal" class="register-modal">
 <div class="register-card">
 <h2>Join Youth Chat</h2>
 <input id="username" placeholder="Enter your name">
@@ -676,18 +676,8 @@ document
 ========================== */
 
 renderMembers();
-renderMessages();
-async function loadMessages() {
-    const res = await fetch(
-        API_URL + "?action=getMessages"
-    );
 
-    const data = await res.json();
 
-    messages = data.messages || [];
-
-    renderMessages();
-}
     setInterval(loadMessages, 3000);
     loadMessages();
 
